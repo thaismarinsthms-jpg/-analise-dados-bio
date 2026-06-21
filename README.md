@@ -1,18 +1,21 @@
-# Análise de Dados Biológicos
+import pandas as pd
+import matplotlib.pyplot as plt
 
-Este projeto tem como objetivo realizar uma análise simples de dados biológicos utilizando Python.
+dados = {
+    "amostra": [1, 2, 3, 4, 5],
+    "expressao_genica": [2.3, 3.1, 4.7, 3.9, 5.2]
+}
 
-## Ferramentas utilizadas:
-- Python
-- Pandas
-- Matplotlib
+df = pd.DataFrame(dados)
 
-## Objetivos:
-- Praticar análise de dados
-- Explorar dados biológicos de forma simples
-- Criar visualizações básicas
+print("Dados do projeto:")
+print(df)
 
-## O que será feito:
-- Limpeza de dados
-- Análise exploratória
-- Criação de gráficos
+print("\nResumo estatístico:")
+print(df.describe())
+
+plt.plot(df["amostra"], df["expressao_genica"])
+plt.title("Expressão gênica por amostra")
+plt.xlabel("Amostra")
+plt.ylabel("Expressão gênica")
+plt.show()
